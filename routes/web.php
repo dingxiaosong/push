@@ -12,10 +12,13 @@
 */
 
 Route::get('/', function () {
-//    return view('welcome');
-phpinfo();
+    return view('welcome');
+//phpinfo();
 });
 //登录
 Route::prefix('/index')->group(function(){
     Route::any('index','UserController@index');
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
